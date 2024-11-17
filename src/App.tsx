@@ -1,5 +1,3 @@
-import { useQuery, useMutation } from "convex/react";
-import { api } from "../convex/_generated/api";
 import { useEffect, useState } from "react";
 import { faker } from "@faker-js/faker";
 
@@ -7,8 +5,10 @@ import { faker } from "@faker-js/faker";
 const NAME = faker.person.firstName();
 
 export default function App() {
-  const messages = useQuery(api.messages.list);
-  const sendMessage = useMutation(api.messages.send);
+  const messages = [
+    { _id: "a", author: "Alice", body: "Good morning!" },
+    { _id: "a", author: NAME, body: "Beautiful sunrise today." },
+  ];
 
   const [newMessageText, setNewMessageText] = useState("");
 
@@ -40,7 +40,7 @@ export default function App() {
       <form
         onSubmit={async (e) => {
           e.preventDefault();
-          await sendMessage({ body: newMessageText, author: NAME });
+          alert("Not implemented yet");
           setNewMessageText("");
         }}
       >
