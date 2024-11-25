@@ -9,6 +9,7 @@ export default function App() {
     { _id: "a", author: "Alice", body: "Good morning!" },
     { _id: "a", author: NAME, body: "Beautiful sunrise today." },
   ];
+  // TODO: Add mutation hook here.
 
   const [newMessageText, setNewMessageText] = useState("");
 
@@ -40,7 +41,7 @@ export default function App() {
       <form
         onSubmit={async (e) => {
           e.preventDefault();
-          alert("Not implemented yet");
+          alert("Mutation not implemented yet");
           setNewMessageText("");
         }}
       >
