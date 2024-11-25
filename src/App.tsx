@@ -6,8 +6,8 @@ const NAME = faker.person.firstName();
 
 export default function App() {
   const messages = [
-    { _id: "a", author: "Alice", body: "Good morning!" },
-    { _id: "a", author: NAME, body: "Beautiful sunrise today." },
+    { _id: "a", user: "Alice", body: "Good morning!" },
+    { _id: "a", user: NAME, body: "Beautiful sunrise today." },
   ];
   // TODO: Add mutation hook here.
 
@@ -31,9 +31,9 @@ export default function App() {
       {messages?.map((message) => (
         <article
           key={message._id}
-          className={message.author === NAME ? "message-mine" : ""}
+          className={message.user === NAME ? "message-mine" : ""}
         >
-          <div>{message.author}</div>
+          <div>{message.user}</div>
 
           <p>{message.body}</p>
         </article>
