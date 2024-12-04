@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { faker } from "@faker-js/faker";
 
 // For demo purposes. In a real app, you'd have real user data.
-const NAME = faker.person.firstName();
+const NAME = getOrSetFakeName();
 
 export default function App() {
   const messages = [
@@ -59,4 +59,15 @@ export default function App() {
       </form>
     </main>
   );
+}
+
+function getOrSetFakeName() {
+  const NAME_KEY = "tutorial_name";
+  const name = sessionStorage.getItem(NAME_KEY);
+  if (!name) {
+    const newName = faker.person.firstName();
+    sessionStorage.setItem(NAME_KEY, newName);
+    return newName;
+  }
+  return name;
 }
