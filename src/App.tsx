@@ -6,8 +6,8 @@ const NAME = faker.person.firstName();
 
 export default function App() {
   const messages = [
-    { _id: "a", user: "Alice", body: "Good morning!" },
-    { _id: "a", user: NAME, body: "Beautiful sunrise today." },
+    { _id: "1", user: "Alice", body: "Good morning!" },
+    { _id: "2", user: NAME, body: "Beautiful sunrise today" },
   ];
   // TODO: Add mutation hook here.
 
